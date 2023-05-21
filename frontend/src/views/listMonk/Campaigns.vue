@@ -263,8 +263,8 @@
 import dayjs from 'dayjs';
 import Vue from 'vue';
 import { mapState } from 'vuex';
-import CampaignPreview from '../components/CampaignPreview.vue';
-import EmptyPlaceholder from '../components/EmptyPlaceholder.vue';
+import CampaignPreview from '@/components/CampaignPreview.vue';
+import EmptyPlaceholder from '@/components/EmptyPlaceholder.vue';
 
 export default Vue.extend({
   components: {

@@ -1,6 +1,6 @@
+import { models } from '@/constants';
 import Vue from 'vue';
 import Vuex from 'vuex';
-import { models } from '../constants';
 
 Vue.use(Vuex);
 

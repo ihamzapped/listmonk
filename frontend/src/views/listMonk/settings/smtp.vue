@@ -210,9 +210,9 @@
 </template>
 
 <script>
+import { regDuration } from '@/constants';
 import Vue from 'vue';
 import { mapState } from 'vuex';
-import { regDuration } from '../../constants';
 
 const smtpTemplates = {
   gmail: {

@@ -121,11 +121,11 @@
 </template>
 
 <script>
+import CampaignPreview from '@/components/CampaignPreview.vue';
+import EmptyPlaceholder from '@/components/EmptyPlaceholder.vue';
 import Vue from 'vue';
 import { mapState } from 'vuex';
 import TemplateForm from './TemplateForm.vue';
-import CampaignPreview from '../components/CampaignPreview.vue';
-import EmptyPlaceholder from '../components/EmptyPlaceholder.vue';
 
 export default Vue.extend({
   components: {

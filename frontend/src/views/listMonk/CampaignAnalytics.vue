@@ -74,11 +74,11 @@
 </style>
 
 <script>
+import { colors } from '@/constants';
+import c3 from 'c3';
+import dayjs from 'dayjs';
 import Vue from 'vue';
 import { mapState } from 'vuex';
-import dayjs from 'dayjs';
-import c3 from 'c3';
-import { colors } from '../constants';
 
 const chartColorRed = '#ee7d5b';
 const chartColors = [

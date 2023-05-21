@@ -110,17 +110,16 @@
 </template>
 
 <script>
-import { mapState } from 'vuex';
-import TurndownService from 'turndown';
 import { indent } from 'indent.js';
+import TurndownService from 'turndown';
+import { mapState } from 'vuex';
 
+import TinyMce from '@tinymce/tinymce-vue';
 import 'tinymce';
 import 'tinymce/icons/default';
-import 'tinymce/themes/silver';
-import 'tinymce/skins/ui/oxide/skin.css';
 import 'tinymce/plugins/anchor';
-import 'tinymce/plugins/autoresize';
 import 'tinymce/plugins/autolink';
+import 'tinymce/plugins/autoresize';
 import 'tinymce/plugins/charmap';
 import 'tinymce/plugins/colorpicker';
 import 'tinymce/plugins/contextmenu';
@@ -140,12 +139,13 @@ import 'tinymce/plugins/textcolor';
 import 'tinymce/plugins/visualblocks';
 import 'tinymce/plugins/visualchars';
 import 'tinymce/plugins/wordcount';
-import TinyMce from '@tinymce/tinymce-vue';
+import 'tinymce/skins/ui/oxide/skin.css';
+import 'tinymce/themes/silver';
 
+import { colors, uris } from '@/constants';
+import Media from '../views/listMonk/Media.vue';
 import CampaignPreview from './CampaignPreview.vue';
 import HTMLEditor from './HTMLEditor.vue';
-import Media from '../views/Media.vue';
-import { colors, uris } from '../constants';
 
 const turndown = new TurndownService();
 

@@ -209,12 +209,12 @@
 </template>
 
 <script>
+import EmptyPlaceholder from '@/components/EmptyPlaceholder.vue';
+import { uris } from '@/constants';
 import Vue from 'vue';
 import { mapState } from 'vuex';
-import SubscriberForm from './SubscriberForm.vue';
 import SubscriberBulkList from './SubscriberBulkList.vue';
-import EmptyPlaceholder from '../components/EmptyPlaceholder.vue';
-import { uris } from '../constants';
+import SubscriberForm from './SubscriberForm.vue';
 
 export default Vue.extend({
   components: {

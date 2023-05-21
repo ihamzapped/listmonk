@@ -142,10 +142,10 @@
 </style>
 
 <script>
-import Vue from 'vue';
+import { colors } from '@/constants';
 import c3 from 'c3';
 import dayjs from 'dayjs';
-import { colors } from '../constants';
+import Vue from 'vue';
 
 export default Vue.extend({
   data() {

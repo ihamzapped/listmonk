@@ -3,8 +3,8 @@
 </template>
 
 <script>
+import { colors } from '@/constants';
 import CodeFlask from 'codeflask';
-import { colors } from '../constants';
 
 export default {
   props: {

@@ -72,10 +72,10 @@
 </template>
 
 <script>
+import CampaignPreview from '@/components/CampaignPreview.vue';
+import HTMLEditor from '@/components/HTMLEditor.vue';
 import Vue from 'vue';
 import { mapState } from 'vuex';
-import CampaignPreview from '../components/CampaignPreview.vue';
-import HTMLEditor from '../components/HTMLEditor.vue';
 
 export default Vue.extend({
   components: {

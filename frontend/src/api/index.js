@@ -1,8 +1,8 @@
-import { ToastProgrammatic as Toast } from 'buefy';
+import { models } from '@/constants';
 import axios from 'axios';
+import { ToastProgrammatic as Toast } from 'buefy';
 import qs from 'qs';
 import store from '../store';
-import { models } from '../constants';
 import Utils from '../utils';
 
 const http = axios.create({

@@ -7,9 +7,9 @@
 </template>
 
 <script>
+import LogView from '@/components/LogView.vue';
 import Vue from 'vue';
 import { mapState } from 'vuex';
-import LogView from '../components/LogView.vue';
 
 export default Vue.extend({
   components: {

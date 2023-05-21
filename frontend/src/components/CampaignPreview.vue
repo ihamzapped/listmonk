@@ -32,7 +32,7 @@
 </template>
 
 <script>
-import { uris } from '../constants';
+import { uris } from '@/constants';
 
 export default {
   name: 'CampaignPreview',

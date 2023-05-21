@@ -156,10 +156,10 @@
 </template>
 
 <script>
+import EmptyPlaceholder from '@/components/EmptyPlaceholder.vue';
 import Vue from 'vue';
 import { mapState } from 'vuex';
 import ListForm from './ListForm.vue';
-import EmptyPlaceholder from '../components/EmptyPlaceholder.vue';
 
 export default Vue.extend({
   components: {

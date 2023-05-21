@@ -52,9 +52,9 @@
 </template>
 
 <script>
+import ListSelector from '@/components/ListSelector.vue';
 import Vue from 'vue';
 import { mapState } from 'vuex';
-import ListSelector from '../components/ListSelector.vue';
 
 export default Vue.extend({
   components: {

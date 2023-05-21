@@ -282,13 +282,13 @@
 </template>
 
 <script>
-import Vue from 'vue';
-import { mapState } from 'vuex';
 import dayjs from 'dayjs';
 import htmlToPlainText from 'textversionjs';
+import Vue from 'vue';
+import { mapState } from 'vuex';
 
-import ListSelector from '../components/ListSelector.vue';
-import Editor from '../components/Editor.vue';
+import Editor from '@/components/Editor.vue';
+import ListSelector from '@/components/ListSelector.vue';
 import Media from './Media.vue';
 
 const TABS = ['campaign', 'content', 'archive'];

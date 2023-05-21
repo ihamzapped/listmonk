@@ -181,8 +181,8 @@
 </template>
 
 <script>
+import { regDuration } from '@/constants';
 import Vue from 'vue';
-import { regDuration } from '../../constants';
 
 export default Vue.extend({
   props: {

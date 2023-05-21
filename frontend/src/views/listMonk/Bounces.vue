@@ -89,9 +89,9 @@
 </template>
 
 <script>
+import EmptyPlaceholder from '@/components/EmptyPlaceholder.vue';
 import Vue from 'vue';
 import { mapState } from 'vuex';
-import EmptyPlaceholder from '../components/EmptyPlaceholder.vue';
 
 export default Vue.extend({
   components: {

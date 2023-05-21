@@ -37,9 +37,9 @@
 </template>
 
 <script>
+import HTMLEditor from '@/components/HTMLEditor.vue';
 import Vue from 'vue';
 import { mapState } from 'vuex';
-import HTMLEditor from '../../components/HTMLEditor.vue';
 
 export default Vue.extend({
   components: {
