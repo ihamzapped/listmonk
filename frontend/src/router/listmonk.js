@@ -1,7 +1,10 @@
+import { authGuard } from './guards';
+
 export default {
   path: '/listmonk',
   name: 'listmonk',
   meta: { title: '' },
+  beforeEnter: authGuard,
   redirect: { name: 'dashboard' },
   component: () => import(/* webpackChunkName: "listmonk" */ '../views/listMonk/Index.vue'),
   children: [
@@ -33,7 +36,8 @@ export default {
       path: 'subscribers',
       name: 'subscribers',
       meta: { title: 'globals.terms.subscribers', group: 'subscribers' },
-      component: () => import(/* webpackChunkName: "listmonk" */ '../views/listMonk/Subscribers.vue'),
+      component: () =>
+        import(/* webpackChunkName: "listmonk" */ '../views/listMonk/Subscribers.vue'),
     },
     {
       path: 'subscribers/import',
@@ -51,13 +55,15 @@ export default {
       path: 'subscribers/lists/:listID',
       name: 'subscribers_list',
       meta: { title: 'globals.terms.subscribers', group: 'subscribers' },
-      component: () => import(/* webpackChunkName: "listmonk" */ '../views/listMonk/Subscribers.vue'),
+      component: () =>
+        import(/* webpackChunkName: "listmonk" */ '../views/listMonk/Subscribers.vue'),
     },
     {
       path: 'subscribers/:id',
       name: 'subscriber',
       meta: { title: 'globals.terms.subscribers', group: 'subscribers' },
-      component: () => import(/* webpackChunkName: "listmonk" */ '../views/listMonk/Subscribers.vue'),
+      component: () =>
+        import(/* webpackChunkName: "listmonk" */ '../views/listMonk/Subscribers.vue'),
     },
     {
       path: 'campaigns',
@@ -81,7 +87,8 @@ export default {
       path: 'campaigns/analytics',
       name: 'campaignAnalytics',
       meta: { title: 'analytics.title', group: 'campaigns' },
-      component: () => import(/* webpackChunkName: "listmonk" */ '../views/listMonk/CampaignAnalytics.vue'),
+      component: () =>
+        import(/* webpackChunkName: "listmonk" */ '../views/listMonk/CampaignAnalytics.vue'),
     },
     {
       path: 'campaigns/:id',
@@ -105,7 +112,8 @@ export default {
       path: 'settings/maintenance',
       name: 'maintenance',
       meta: { title: 'maintenance.title', group: 'settings' },
-      component: () => import(/* webpackChunkName: "listmonk" */ '../views/listMonk/Maintenance.vue'),
+      component: () =>
+        import(/* webpackChunkName: "listmonk" */ '../views/listMonk/Maintenance.vue'),
     },
   ],
 };

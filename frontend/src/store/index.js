@@ -18,6 +18,9 @@ export default new Vuex.Store({
     // and the response interceptor marks it as false. The model keys are being
     // pre-initialised here to fix "reactivity" issues on first loads.
     loading: Object.keys(models).reduce((obj, cur) => ({ ...obj, [cur]: false }), {}),
+
+    // User
+    session: undefined,
   },
 
   mutations: {
@@ -33,6 +36,10 @@ export default new Vuex.Store({
     setLoading(state, { model, status }) {
       state.loading[model] = status;
     },
+
+    setSession(state, data) {
+      state.session = data;
+    },
   },
 
   getters: {
@@ -44,8 +51,8 @@ export default new Vuex.Store({
     [models.settings]: (state) => state[models.settings],
     [models.serverConfig]: (state) => state[models.serverConfig],
     [models.logs]: (state) => state[models.logs],
+    isLoggedIn: (state) => Boolean(state.session),
   },
 
-  modules: {
-  },
+  modules: {},
 });
