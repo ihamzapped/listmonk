@@ -1,25 +1,19 @@
 <template>
   <section class="mx-auto box login-container">
     <form @submit.prevent="login">
-      <b-field
-        label="E-mail"
-        required
-        :type="{ 'is-danger': hasError }"
-        :message="{ 'Invalid Email': hasError }"
-      >
-        <b-input v-model="mail"></b-input>
+      <b-field label="E-mail" type="email" :message="{ 'Invalid Credentials': hasError }">
+        <b-input v-model="mail" required type="email"></b-input>
       </b-field>
 
       <b-field
         label="Password"
-        required
         :type="{ 'is-danger': hasError }"
-        :message="[{ 'Invalid Password': hasError }]"
+        :message="[{ 'Invalid Credentials': hasError }]"
       >
-        <b-input v-model="password" type="password" maxlength="30"></b-input>
+        <b-input v-model="password" type="password" maxlength="30" required></b-input>
       </b-field>
 
-      <b-button expanded native-type="submit" type="is-primary">Login</b-button>
+      <b-button :loading="loading" expanded native-type="submit" type="is-primary">Login</b-button>
     </form>
   </section>
 </template>
@@ -38,20 +32,27 @@ export default Vue.extend({
       hasError: false,
       mail: '',
       password: '',
+      loading: false,
     };
   },
 
   methods: {
     async login() {
       try {
+        this.loading = true;
         const { error } = await supabase.auth.signInWithPassword({
           email: this.mail,
           password: this.password,
         });
-        if (error) throw error;
+        if (error) {
+          this.hasError = true;
+          throw error;
+        }
         this.$router.push({ name: 'services' });
       } catch (error) {
         console.log(error);
+      } finally {
+        this.loading = false;
       }
     },
   },

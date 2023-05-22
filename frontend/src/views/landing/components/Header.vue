@@ -46,10 +46,6 @@ export default Vue.extend({
     return {};
   },
 
-  mounted() {
-    console.log(this.$store.getters.isLoggedIn);
-  },
-
   computed: {
     isLoggedIn() {
       return this.$store.getters.isLoggedIn;
@@ -61,7 +57,7 @@ export default Vue.extend({
       try {
         const { error } = await supabase.auth.signOut();
         if (error) throw error;
-        this.$router.push({ name: 'home' });
+        if (this.$route.name !== 'home') this.$router.push({ name: 'home' });
       } catch (error) {
         console.log(error.message);
       }
