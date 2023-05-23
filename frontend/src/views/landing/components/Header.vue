@@ -1,6 +1,11 @@
 <template>
-  <div class="nav-container">
-    <b-navbar class="landing-navbar container is-fullhd relative" centered>
+  <div class="nav-container" :class="[isBgGrey]">
+    <b-navbar
+      ref="landingNav"
+      class="landing-navbar container is-fullhd relative"
+      :class="[isBgGrey]"
+      centered
+    >
       <template #brand>
         <b-navbar-item tag="router-link" :to="{ name: 'home' }">
           <img
@@ -61,6 +66,18 @@ export default Vue.extend({
     isLoggedIn() {
       return this.$store.getters.isLoggedIn;
     },
+
+    isHome() {
+      return this.$route.name === 'home';
+    },
+
+    isMobile() {
+      return window.innerWidth < 1024;
+    },
+
+    isBgGrey() {
+      return this.isHome && !this.isMobile ? 'hide-bg' : 'show-bg';
+    },
   },
 
   methods: {
@@ -85,19 +102,27 @@ export default Vue.extend({
 $active: #b69c74;
 $headerBg: #121926;
 
-.nav-container {
+.show-bg {
   background-color: $headerBg;
+}
+
+.hide-bg {
+  background-color: transparent;
 }
 
 .landing-navbar {
   height: 30vw;
-  background-color: $headerBg;
   max-height: 150px;
   box-shadow: unset;
+  position: absolute;
+  width: 100%;
 
-  .navbar-menu,
+  .navbar-menu.is-active {
+    background-color: $headerBg;
+  }
   .navbar-dropdown {
     background-color: $headerBg;
+    right: 0;
   }
 
   .navbar-brand {
@@ -114,10 +139,9 @@ $headerBg: #121926;
     color: white;
   }
 
-  a:focus-within,
   .navbar-link {
     color: white;
-    background-color: unset;
+    background-color: $headerBg !important;
   }
 
   a.is-active {
@@ -128,9 +152,13 @@ $headerBg: #121926;
     border-color: $active;
   }
 
+  a:hover,
+  a:focus-within {
+    background-color: unset;
+  }
+
   a:hover {
     color: $active;
-    background-color: unset;
   }
 
   img {
