@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <div id="app" style="height: 100%">
     <router-view />
   </div>
 </template>
@@ -10,8 +10,7 @@ import Vue from 'vue';
 export default Vue.extend({
   name: 'App',
 
-  components: {
-  },
+  components: {},
 
   data() {
     return {
@@ -19,33 +18,29 @@ export default Vue.extend({
     };
   },
 
-  watch: {
-  },
+  watch: {},
 
-  methods: {
-  },
+  methods: {},
 
   computed: {
-
     version() {
       return process.env.VUE_APP_VERSION;
     },
 
-  //  isMobile() {
-  //    return this.windowWidth <= 768;
-  //  },
+    //  isMobile() {
+    //    return this.windowWidth <= 768;
+    //  },
   },
 
   mounted() {
-
-  //  window.addEventListener('resize', () => {
-  //    this.windowWidth = window.innerWidth;
-  //  });
+    //  window.addEventListener('resize', () => {
+    //    this.windowWidth = window.innerWidth;
+    //  });
   },
 });
 </script>
 
 <style lang="scss">
-@import "assets/style.scss";
-@import "assets/icons/fontello.css";
+@import 'assets/style.scss';
+@import 'assets/icons/fontello.css';
 </style>

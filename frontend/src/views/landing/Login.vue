@@ -1,6 +1,6 @@
 <template>
-  <section class="mx-auto box login-container">
-    <form @submit.prevent="login">
+  <section class="login-container px-4">
+    <form @submit.prevent="login" class="mx-auto box">
       <b-field label="E-mail" type="email" :message="{ 'Invalid Credentials': hasError }">
         <b-input v-model="mail" required type="email"></b-input>
       </b-field>
@@ -60,13 +60,15 @@ export default Vue.extend({
 </script>
 
 <style scoped lang="scss">
-main {
-  min-height: 100vh;
-  padding-bottom: 8rem;
-}
-
 .login-container {
-  max-width: 360px;
-  margin-top: 10%;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+
+  form {
+    width: 100%;
+    max-width: 360px;
+  }
 }
 </style>
