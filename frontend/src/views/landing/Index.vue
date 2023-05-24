@@ -1,5 +1,5 @@
 <template>
-  <div style="height: 100%">
+  <div class="landing-page" style="height: 100%">
     <TopBar />
     <Header />
     <main style="height: 100%">
@@ -28,9 +28,8 @@ export default Vue.extend({
 });
 </script>
 
-<style scoped lang="scss">
-main {
-  min-height: 100vh;
-  padding-bottom: 8rem;
+<style lang="scss">
+.landing-page {
+  @import '@/assets/landing-styles.scss';
 }
 </style>

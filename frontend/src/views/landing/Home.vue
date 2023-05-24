@@ -1,14 +1,22 @@
 <template>
-  <section class="hero-area"></section>
+  <div>
+    <Hero />
+  </div>
 </template>
 
-<style scoped lang="scss">
-.hero-area {
-  background-image: url('https://www.mckenzie-legal.com/wp-content/themes/law-theme/images/banner.png');
-  min-height: 908px;
-  display: inline-flex;
-  width: 100%;
-  align-items: center;
-  padding-top: 100px;
-}
-</style>
+<script>
+import Vue from 'vue';
+import Hero from './components/Hero.vue';
+
+export default Vue.extend({
+  name: 'Home',
+
+  components: {
+    Hero,
+  },
+
+  data() {
+    return {};
+  },
+});
+</script>

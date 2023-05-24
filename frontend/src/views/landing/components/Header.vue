@@ -99,29 +99,30 @@ export default Vue.extend({
 </script>
 
 <style lang="scss">
-$active: #b69c74;
-$headerBg: #121926;
-
 .show-bg {
-  background-color: $headerBg;
+  background-color: var(--bg-dark) !important;
 }
 
 .hide-bg {
-  background-color: transparent;
+  background-color: transparent !important;
+}
+
+.nav-container {
+  width: 100%;
+  position: absolute;
 }
 
 .landing-navbar {
-  height: 30vw;
+  height: 25vw;
   max-height: 150px;
   box-shadow: unset;
-  position: absolute;
   width: 100%;
 
   .navbar-menu.is-active {
-    background-color: $headerBg;
+    background-color: var(--bg-dark);
   }
   .navbar-dropdown {
-    background-color: $headerBg;
+    background-color: var(--bg-dark);
     right: 0;
   }
 
@@ -141,15 +142,15 @@ $headerBg: #121926;
 
   .navbar-link {
     color: white;
-    background-color: $headerBg !important;
+    background-color: var(--bg-dark) !important;
   }
 
   a.is-active {
-    color: $active;
+    color: var(--accent);
   }
 
   .navbar-link:not(.is-arrowless)::after {
-    border-color: $active;
+    border-color: var(--accent);
   }
 
   a:hover,
@@ -158,7 +159,7 @@ $headerBg: #121926;
   }
 
   a:hover {
-    color: $active;
+    color: var(--accent);
   }
 
   img {

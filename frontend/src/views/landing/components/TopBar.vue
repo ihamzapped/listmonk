@@ -12,10 +12,10 @@
 
       <!-- Right side -->
       <div class="">
-        <b-icon class="" icon="email-bounce" size="is-medium"> </b-icon>
-        <b-icon class="" icon="facebook" size="is-medium"> </b-icon>
-        <b-icon class="" icon="whatsapp" size="is-medium"> </b-icon>
-        <b-icon class="" icon="instagram" size="is-medium"> </b-icon>
+        <b-icon class="" icon="email-bounce"> </b-icon>
+        <b-icon class="" icon="facebook"> </b-icon>
+        <b-icon class="" icon="whatsapp"> </b-icon>
+        <b-icon class="" icon="instagram"> </b-icon>
       </div>
     </nav>
   </div>
@@ -24,10 +24,8 @@
 <script></script>
 
 <style scoped lang="scss">
-$topBg: #1f2839;
-
 .top-bar {
-  background-color: $topBg;
+  background-color: var(--bg-light);
   position: sticky;
   top: 0;
   z-index: 999;
