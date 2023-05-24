@@ -80,7 +80,7 @@ $p-sides: 2vw;
   padding: 0 $p-sides;
 
   .content {
-    margin-top: 150px;
+    margin-top: 160px;
   }
 
   h2 {
