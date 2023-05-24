@@ -1,7 +1,7 @@
 <template>
   <div>
     <section class="hero-area">
-      <div class="container is-fullhd content two-cols">
+      <div class="container is-fullhd content fluid-row">
         <div>
           <h2>Welcome to</h2>
           <h1>The Law Office of <br />Raymond T. McKenzie, Esq.</h1>
@@ -24,7 +24,7 @@
     </section>
 
     <section class="about-area">
-      <div class="container is-fullhd content two-cols">
+      <div class="container is-fullhd fluid-row">
         <div>
           <img
             src="https://www.mckenzie-legal.com/dev/wp-content/uploads/2022/08/abt.jpg"
@@ -46,16 +46,41 @@
         </div>
       </div>
     </section>
+
+    <section class="practice-area">
+      <h3>What we do</h3>
+      <h2>Our Practice Areas</h2>
+      <div class="container is-fullhd fluid-row prac-container">
+        <div v-for="(el, i) in practices" :key="i" class="practice">
+          <div style="width: 40%">
+            <img class="mb-4" :src="el.imgUrl" alt="" srcset="" />
+          </div>
+          <div>
+            <h4>
+              {{ el.title }}
+            </h4>
+            <p>{{ el.text }}</p>
+          </div>
+        </div>
+      </div>
+    </section>
   </div>
 </template>
 
 <script>
 import Vue from 'vue';
 import BtnContact from './components/BtnContact.vue';
+import { practices } from './content';
 
 export default Vue.extend({
   name: 'Home',
   components: { BtnContact },
+
+  data() {
+    return {
+      practices,
+    };
+  },
 });
 </script>
 
@@ -105,6 +130,68 @@ $p-sides: 2vw;
   p {
     color: var(--text-light);
     margin: 48px 0;
+  }
+}
+
+.practice-area {
+  background-color: var(--bg-light);
+  padding: 64px $p-sides;
+
+  h2,
+  h3 {
+    text-align: center;
+  }
+
+  h2 {
+    font-size: 30px;
+  }
+
+  h3 {
+    color: var(--accent);
+    font-size: 28px;
+  }
+
+  .prac-container {
+    margin-top: 48px;
+  }
+
+  .practice {
+    min-width: 300px;
+    max-width: 500px;
+    flex-basis: 20%;
+    height: auto;
+    background-color: var(--bg-lighter);
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    padding: 30px;
+    display: flex;
+    flex-wrap: wrap;
+
+    p {
+      color: var(--text-dark);
+      margin-top: 16px;
+    }
+
+    h4 {
+      font-size: 26px;
+      line-height: 1.1;
+    }
+  }
+
+  .practice div:first-child {
+    margin-right: 25px;
+    min-width: 60px;
+    max-width: 60px;
+  }
+
+  .practice div:nth-child(2) {
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: 200px;
+  }
+
+  .practice:hover {
+    background-color: var(--hover-accent);
   }
 }
 </style>
