@@ -1,6 +1,6 @@
 <template>
   <div class="monk-container">
-    <b-navbar :fixed-top="true" v-if="$root.isLoaded">
+    <!-- <b-navbar :fixed-top="true" v-if="$root.isLoaded">
       <template #brand>
         <div class="logo">
           <router-link :to="{ name: 'dashboard' }">
@@ -22,7 +22,7 @@
           <a href="#" @click.prevent="doLogout">{{ $t('users.logout') }}</a>
         </b-navbar-item>
       </template>
-    </b-navbar>
+    </b-navbar> -->
 
     <div class="wrapper" v-if="$root.isLoaded">
       <section class="sidebar">

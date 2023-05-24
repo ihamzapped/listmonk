@@ -1,7 +1,5 @@
 <template>
   <div class="landing-page">
-    <TopBar />
-    <Header />
     <main style="height: 100%">
       <router-view />
     </main>
@@ -11,16 +9,9 @@
 
 <script>
 import Vue from 'vue';
-import Header from './components/Header.vue';
-import TopBar from './components/TopBar.vue';
 
 export default Vue.extend({
   name: 'Index',
-
-  components: {
-    Header,
-    TopBar,
-  },
 
   data() {
     return {};
@@ -30,7 +21,7 @@ export default Vue.extend({
 
 <style lang="scss">
 .landing-page {
-  @import '@/assets/landing-styles.scss';
+  // @import '@/assets/landing-styles.scss';
 
   height: 100%;
   position: relative;

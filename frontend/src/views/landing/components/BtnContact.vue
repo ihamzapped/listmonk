@@ -1,3 +1,3 @@
 <template>
-  <a href="tel:3013306790" class="button bg-accent"> Contact Us</a>
+  <a href="tel:3013306790" class="btn-accent"> Contact Us</a>
 </template>

@@ -1,16 +1,23 @@
 <template>
   <div id="app" style="height: 100%">
+    <TopBar />
+    <Header />
     <router-view />
   </div>
 </template>
 
 <script>
 import Vue from 'vue';
+import Header from '@/components/Header.vue';
+import TopBar from '@/components/TopBar.vue';
 
 export default Vue.extend({
   name: 'App',
 
-  components: {},
+  components: {
+    Header,
+    TopBar,
+  },
 
   data() {
     return {

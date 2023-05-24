@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="home-container">
     <section class="hero-area">
       <div class="container is-fullhd content fluid-row">
         <div>
@@ -87,6 +87,11 @@ export default Vue.extend({
 <style scoped lang="scss">
 $p-sides: 2vw;
 
+.home-container {
+  position: relative;
+  top: -150px;
+}
+
 .hero-area img,
 .about-area img {
   margin: 0 auto;
@@ -105,7 +110,7 @@ $p-sides: 2vw;
   padding: 0 $p-sides;
 
   .content {
-    margin-top: 160px;
+    margin-top: 170px;
   }
 
   h2 {

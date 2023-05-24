@@ -1,11 +1,6 @@
 <template>
   <div class="nav-container" :class="[isBgGrey]">
-    <b-navbar
-      ref="landingNav"
-      class="landing-navbar container is-fullhd relative"
-      :class="[isBgGrey]"
-      centered
-    >
+    <b-navbar transparent class="landing-navbar container is-fullhd" :class="[isBgGrey]" centered>
       <template #brand>
         <b-navbar-item tag="router-link" :to="{ name: 'home' }">
           <img
@@ -109,7 +104,7 @@ export default Vue.extend({
 
 .nav-container {
   width: 100%;
-  position: absolute;
+  // position: absolute;
 }
 
 .landing-navbar {
@@ -117,12 +112,14 @@ export default Vue.extend({
   max-height: 150px;
   box-shadow: unset;
   width: 100%;
+  padding-left: 10px;
+  padding-right: 10px;
 
   .navbar-menu.is-active {
-    background-color: var(--bg-dark);
+    background-color: var(--bg-dark) !important;
   }
   .navbar-dropdown {
-    background-color: var(--bg-dark);
+    background-color: var(--bg-dark) !important;
     right: 0;
   }
 
@@ -130,10 +127,6 @@ export default Vue.extend({
     height: 100%;
     display: flex;
     align-items: center;
-  }
-
-  .navbar-end {
-    padding-right: 10px;
   }
 
   a {
@@ -146,25 +139,25 @@ export default Vue.extend({
   }
 
   a.is-active {
-    color: var(--accent);
+    color: var(--accent) !important;
   }
 
   .navbar-link:not(.is-arrowless)::after {
-    border-color: var(--accent);
+    border-color: var(--accent) !important;
   }
 
-  a:hover,
-  a:focus-within {
-    background-color: unset;
-  }
+  // a:hover,
+  // a:focus-within {
+  //   background-color: unset !important;
+  // }
 
   a:hover {
-    color: var(--accent);
+    color: var(--accent) !important;
   }
 
   img {
     height: 10vw;
-    max-height: 3rem;
+    max-height: 3rem !important;
   }
 }
 </style>
