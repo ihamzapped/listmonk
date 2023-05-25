@@ -1,10 +1,7 @@
 <template>
-  <div class="landing-page">
-    <main style="height: 100%">
-      <router-view />
-    </main>
-    <footer></footer>
-  </div>
+  <main class="landing-page">
+    <router-view />
+  </main>
 </template>
 
 <script>
@@ -19,11 +16,4 @@ export default Vue.extend({
 });
 </script>
 
-<style lang="scss">
-.landing-page {
-  // @import '@/assets/landing-styles.scss';
-
-  height: 100%;
-  position: relative;
-}
-</style>
+<style lang="scss"></style>

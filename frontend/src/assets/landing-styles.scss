@@ -6,6 +6,7 @@
   --bg-dark: #121926;
   --text-light: #767576;
   --text-dark: #d1d1d1;
+  --border: #ffffff17;
 }
 
 .img-fluid {
@@ -13,9 +14,13 @@
   height: auto;
 }
 
-main {
+.h3 {
+  font-size: 24px;
+}
+
+.landing-page {
   min-height: 100vh;
-  padding-bottom: 8rem;
+  //   padding-bottom: 8rem;
   color: white;
 }
 
@@ -34,6 +39,7 @@ p {
   text-transform: uppercase;
   font-weight: bold;
   font-size: 18px;
+  transition: all 0.2s ease-in-out;
 }
 
 .fluid-row {
@@ -46,9 +52,8 @@ p {
 
 .fluid-row > * {
   width: auto;
-  min-width: 400px;
   max-width: 600px;
-  flex-basis: 50%;
+  flex-basis: 400px;
   flex-grow: 1;
   flex-shrink: 1;
   margin: 20px;

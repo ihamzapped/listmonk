@@ -3,6 +3,7 @@
     <TopBar />
     <Header />
     <router-view />
+    <Footer />
   </div>
 </template>
 
@@ -10,6 +11,7 @@
 import Vue from 'vue';
 import Header from '@/components/Header.vue';
 import TopBar from '@/components/TopBar.vue';
+import Footer from '@/components/Footer.vue';
 
 export default Vue.extend({
   name: 'App',
@@ -17,12 +19,11 @@ export default Vue.extend({
   components: {
     Header,
     TopBar,
+    Footer,
   },
 
   data() {
-    return {
-      // windowWidth: window.innerWidth,
-    };
+    return {};
   },
 
   watch: {},
@@ -33,17 +34,9 @@ export default Vue.extend({
     version() {
       return process.env.VUE_APP_VERSION;
     },
-
-    //  isMobile() {
-    //    return this.windowWidth <= 768;
-    //  },
   },
 
-  mounted() {
-    //  window.addEventListener('resize', () => {
-    //    this.windowWidth = window.innerWidth;
-    //  });
-  },
+  mounted() {},
 });
 </script>
 

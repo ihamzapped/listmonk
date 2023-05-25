@@ -6,10 +6,7 @@
           <h2>Welcome to</h2>
           <h1>The Law Office of <br />Raymond T. McKenzie, Esq.</h1>
           <p>
-            The Law Office of Raymond T. McKenzie, Esq. is a business law firm located in Montgomery
-            County, Maryland, that has one fundamental mission: to provide our corporate and
-            franchise clients with excellent legal advice, in a trustworthy manner, while
-            establishing long-lasting client relationships.
+            {{ aboutFirm }}
           </p>
           <BtnContact />
         </div>
@@ -64,13 +61,17 @@
         </div>
       </div>
     </section>
+
+    <section class="contact-area">
+      <div class="container is-fullhd fluid-row contact-container"></div>
+    </section>
   </div>
 </template>
 
 <script>
 import Vue from 'vue';
+import { practices, aboutFirm } from '@/content';
 import BtnContact from './components/BtnContact.vue';
-import { practices } from './content';
 
 export default Vue.extend({
   name: 'Home',
@@ -79,6 +80,7 @@ export default Vue.extend({
   data() {
     return {
       practices,
+      aboutFirm,
     };
   },
 });
@@ -197,6 +199,19 @@ $p-sides: 2vw;
 
   .practice:hover {
     background-color: var(--hover-accent);
+  }
+}
+
+.contact-area {
+  position: relative;
+  top: 64px;
+  .contact-container {
+    background-image: url('https://www.mckenzie-legal.com/wp-content/themes/law-theme/images/banner.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 700px;
+    width: 600px;
+    margin: 0 auto;
   }
 }
 </style>

@@ -131,6 +131,7 @@ export default Vue.extend({
 
   a {
     color: white;
+    transition: all 0.2s ease-in-out;
   }
 
   .navbar-link {
