@@ -8,56 +8,25 @@
           alt=""
         />
         <p>{{ aboutFirm }}</p>
-        <div class="social">
-          <span>
-            <a href="https://www.facebook.com/raymckenzielegal" target="_blank"
-              ><img
-                src="https://www.mckenzie-legal.com/wp-content/themes/law-theme/images/icon-fb.png"
-                alt=""
-            /></a>
-          </span>
-          <span>
-            <a href="#" target="_blank"
-              ><img
-                src="https://www.mckenzie-legal.com/wp-content/themes/law-theme/images/icon-insta.png"
-                alt=""
-            /></a>
-          </span>
-          <span>
-            <a href="#" target="_blank"
-              ><img
-                src="https://www.mckenzie-legal.com/wp-content/themes/law-theme/images/icon-wh.png"
-                alt=""
-            /></a>
-          </span>
-        </div>
+        <Socials />
       </div>
       <div>
         <h3 class="h3">Quick Contact Info</h3>
-        <div class="">
+
+        <div class="tele">
           <a href="https://goo.gl/maps/9h9hRRGuKya8UjUY8" target="_blank">
-            <span>
-              <i class="fa-solid fa-location-dot"></i>
-            </span>
+            <i class="material-symbols-outlined"> distance </i>
             <span> 9841 Washingtonian Blvd., Suite 200 <br />Gaithersburg, Maryland 20878 </span>
           </a>
-        </div>
+          <a :href="`tel:${phone}`">
+            <i class="material-symbols-outlined"> call </i>
 
-        <div class="">
-          <a href="tel:3013306790">
-            <span>
-              <i class="fa-solid fa-phone"></i>
-            </span>
             <span> (301) 330-6790 </span>
           </a>
-        </div>
+          <a :href="`mailto:${mail}`">
+            <i class="material-symbols-outlined"> mail </i>
 
-        <div class="">
-          <a href="mailto:ray@mckenzie-legal.com">
-            <span>
-              <i class="fa-solid fa-envelope"></i>
-            </span>
-            <span> ray@mckenzie-legal.com </span>
+            <span> {{ mail }} </span>
           </a>
         </div>
       </div>
@@ -71,12 +40,13 @@
 
 <script>
 import Vue from 'vue';
+import Socials from '@/components/Socials.vue';
 import { phone, mail, aboutFirm } from '@/content';
 
 export default Vue.extend({
   name: 'Footer',
 
-  components: {},
+  components: { Socials },
 
   data() {
     return {
@@ -102,6 +72,27 @@ footer {
     font-size: clamp(12px, 4vw, 14px);
   }
 
+  a:hover {
+    color: var(--accent) !important;
+  }
+
+  .tele > a > span {
+    margin-left: 8px;
+  }
+
+  .tele > a i {
+    color: var(--accent);
+  }
+
+  .tele > a {
+    display: flex;
+    align-items: center;
+  }
+
+  .tele > a {
+    margin-bottom: 12px;
+  }
+
   .h3 {
     border-left: 1px solid var(--accent);
     color: white;
@@ -120,17 +111,9 @@ footer {
     }
   }
 
-  .footer-info > div:nth-child(2) > div {
-    margin-bottom: 12px;
-  }
-
   .footer-info > div {
     flex-basis: 450px;
     padding: 20px;
-  }
-
-  .social > span {
-    margin-right: 24px;
   }
 
   .copyright {
