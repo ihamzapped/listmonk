@@ -85,3 +85,9 @@ p {
   flex-shrink: 1;
   width: 100%;
 }
+
+@media (max-width: 480px) {
+  .hidden-mobile {
+    display: none;
+  }
+}

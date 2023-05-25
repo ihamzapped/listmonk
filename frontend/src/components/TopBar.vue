@@ -4,16 +4,15 @@
       class="container is-fullhd is-flex is-justify-content-space-between is-align-items-center py-2 px-4"
     >
       <div class="tele">
-        <a :href="`tel:${phone}`">
+        <a :href="`tel:${phone}`" class="divider-vert pr-3">
           <span class="material-symbols-outlined"> call </span>
 
-          <span> (301) 330-6790 </span>
+          <span class="hidden-mobile"> (301) 330-6790 </span>
         </a>
-        <span class="mx-2">|</span>
-        <a :href="`mailto:${mail}`">
+        <a :href="`mailto:${mail}`" class="pl-3">
           <span class="material-symbols-outlined"> mail </span>
 
-          <span> {{ mail }} </span>
+          <span class="hidden-mobile"> {{ mail }} </span>
         </a>
       </div>
       <Socials class="socials" />
@@ -42,14 +41,17 @@ export default Vue.extend({
 
 <style>
 .socials > a {
-  width: 17px;
+  width: 20px;
 }
 </style>
 
 <style scoped lang="scss">
+.divider-vert {
+  border-right: 1px solid currentColor;
+}
+
 .tele > a > .material-symbols-outlined {
   color: var(--accent);
-  margin-right: 6px;
   top: 1px;
   position: relative;
 }
@@ -62,7 +64,7 @@ export default Vue.extend({
   background-color: var(--bg-light);
   position: sticky;
   top: 0;
-  z-index: 999;
+  z-index: 10;
 
   a {
     color: rgb(255 255 255 / 79%) !important;
