@@ -87,7 +87,7 @@ export default Vue.extend({
 </script>
 
 <style scoped lang="scss">
-$p-sides: 2vw;
+$p-sides: 4vw;
 
 .home-container {
   position: relative;
@@ -129,6 +129,10 @@ $p-sides: 2vw;
     margin-bottom: 40px;
     color: white;
   }
+
+  .fluid-row {
+    gap: 12vw;
+  }
 }
 
 .about-area {
@@ -165,7 +169,7 @@ $p-sides: 2vw;
   .practice {
     min-width: 300px;
     max-width: 500px;
-    flex-basis: 20%;
+    flex-basis: 25%;
     height: auto;
     background-color: var(--bg-lighter);
     cursor: pointer;

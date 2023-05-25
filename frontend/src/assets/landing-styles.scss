@@ -26,6 +26,16 @@ a {
   min-height: 100vh;
   //   padding-bottom: 8rem;
   color: white;
+
+  h1 {
+    font-size: 38px;
+    font-weight: 700;
+  }
+
+  h3 {
+    font-size: 28px;
+    font-weight: 300;
+  }
 }
 
 p {
@@ -52,6 +62,8 @@ p {
   align-items: center;
   flex-wrap: wrap;
   justify-content: center;
+  width: 100%;
+  gap: 20px;
 }
 
 .fluid-row > * {
@@ -60,5 +72,4 @@ p {
   flex-basis: 400px;
   flex-grow: 1;
   flex-shrink: 1;
-  margin: 20px;
 }

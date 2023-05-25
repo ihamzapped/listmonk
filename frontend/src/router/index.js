@@ -38,6 +38,12 @@ const routes = [
         component: () => import(/* webpackChunkName: "main" */ '../views/landing/Services.vue'),
       },
       {
+        path: 'practice-areas',
+        name: 'practices',
+        meta: { title: 'Practices' },
+        component: () => import(/* webpackChunkName: "main" */ '../views/landing/Practices.vue'),
+      },
+      {
         path: 'about-us',
         name: 'about',
         meta: { title: 'About' },

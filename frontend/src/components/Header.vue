@@ -50,7 +50,7 @@ export default Vue.extend({
     return {
       routes: [
         { name: 'home', text: 'Home' },
-        { name: '', text: 'Practice Areas' },
+        { name: 'practices', text: 'Practice Areas' },
         { name: 'about', text: 'About' },
         { name: '', text: 'Contact Us' },
       ],
