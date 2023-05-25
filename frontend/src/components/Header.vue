@@ -3,39 +3,37 @@
     <b-navbar transparent class="landing-navbar container is-fullhd" :class="[isBgGrey]" centered>
       <template #brand>
         <b-navbar-item tag="router-link" :to="{ name: 'home' }">
-          <div class="ml-1">
-            <img
-              src="https://www.mckenzie-legal.com/wp-content/themes/law-theme/images/logo-light.png"
-              alt=""
-            />
-          </div>
+          <img
+            src="https://www.mckenzie-legal.com/wp-content/themes/law-theme/images/logo-light.png"
+            alt=""
+          />
         </b-navbar-item>
       </template>
+
       <template #end>
-        <div class="mr-1">
-          <b-navbar-item
-            v-for="(route, i) in routes"
-            :key="i"
-            :active="isActive(route.name)"
-            tag="router-link"
-            :to="{ name: route.name }"
-          >
-            {{ route.text }}
-          </b-navbar-item>
-          <b-navbar-item tag="div">
-            <div>
-              <router-link v-if="!isLoggedIn" class="button is-light" :to="{ name: 'login' }">
-                Log in
-              </router-link>
-              <b-navbar-dropdown v-else label="Services" class="has-text-white">
-                <b-navbar-item tag="router-link" :to="{ name: 'services' }">
-                  All Services
-                </b-navbar-item>
-                <b-navbar-item @click="logout"> Logout </b-navbar-item>
-              </b-navbar-dropdown>
-            </div>
-          </b-navbar-item>
-        </div>
+        <b-navbar-item
+          v-for="(route, i) in routes"
+          :key="i"
+          :active="isActive(route.name)"
+          tag="router-link"
+          :to="{ name: route.name }"
+        >
+          {{ route.text }}
+        </b-navbar-item>
+        <b-navbar-item tag="div">
+          <div>
+            <router-link v-if="!isLoggedIn" class="button is-light" :to="{ name: 'login' }">
+              Log in
+            </router-link>
+            <b-navbar-dropdown v-else label="Services" class="has-text-white">
+              <b-navbar-item tag="router-link" :to="{ name: 'services' }">
+                All Services
+              </b-navbar-item>
+              <b-navbar-item @click="logout"> Logout </b-navbar-item>
+            </b-navbar-dropdown>
+          </div>
+        </b-navbar-item>
+        <!-- </div> -->
       </template>
     </b-navbar>
   </div>
@@ -129,6 +127,8 @@ export default Vue.extend({
     height: 100%;
     display: flex;
     align-items: center;
+    margin-left: 8px;
+    margin-right: 8px;
   }
 
   a {
