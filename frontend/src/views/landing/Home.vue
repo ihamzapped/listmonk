@@ -63,7 +63,7 @@
     </section>
 
     <section class="contact-area">
-      <div class="container is-fullhd fluid-row contact-container"></div>
+      <div class="fluid-row contact-container"></div>
     </section>
   </div>
 </template>
@@ -214,7 +214,7 @@ $p-sides: 4vw;
     background-repeat: no-repeat;
     background-size: cover;
     height: 700px;
-    width: 600px;
+    max-width: 600px;
     margin: 0 auto;
   }
 }

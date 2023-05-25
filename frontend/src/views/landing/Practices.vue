@@ -44,16 +44,6 @@ $margin: 20px;
 
 .practice-areas-cont {
   margin-bottom: 10vw;
-  .banner {
-    height: 25vw;
-    max-height: 200px;
-    background-image: url('https://www.mckenzie-legal.com/dev/wp-content/uploads/2022/08/banner.png');
-    padding: auto 0;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
 
   .content {
     color: var(--text-light);
