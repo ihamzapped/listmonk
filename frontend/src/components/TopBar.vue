@@ -60,6 +60,10 @@ export default Vue.extend({
   justify-content: center;
   align-items: center;
 }
+
+.tele > a span:nth-child(2) {
+  margin-left: 4px;
+}
 .top-bar {
   background-color: var(--bg-light);
   position: sticky;

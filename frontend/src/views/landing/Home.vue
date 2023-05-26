@@ -63,7 +63,9 @@
     </section>
 
     <section class="contact-area">
-      <div class="fluid-row contact-container"></div>
+      <h3>Schedule a</h3>
+      <h2>Consultation</h2>
+      <ContactForm placeholders class="mt-6" />
     </section>
   </div>
 </template>
@@ -72,10 +74,11 @@
 import Vue from 'vue';
 import { practices, aboutFirm } from '@/content';
 import BtnContact from './components/BtnContact.vue';
+import ContactForm from './components/ContactForm.vue';
 
 export default Vue.extend({
   name: 'Home',
-  components: { BtnContact },
+  components: { BtnContact, ContactForm },
 
   data() {
     return {
@@ -206,16 +209,25 @@ $p-sides: 4vw;
   }
 }
 
+// .contact-container {
 .contact-area {
   position: relative;
   top: 64px;
-  .contact-container {
-    background-image: url('https://www.mckenzie-legal.com/wp-content/themes/law-theme/images/banner.png');
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 700px;
-    max-width: 600px;
-    margin: 0 auto;
+  padding: 60px 40px;
+  background-image: url('https://www.mckenzie-legal.com/wp-content/themes/law-theme/images/banner.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  max-width: 550px;
+  margin: 0 auto;
+
+  h3 {
+    color: var(--accent) !important;
+  }
+
+  h2 {
+    font-size: 30px;
+    font-weight: 700;
   }
 }
+// }
 </style>
