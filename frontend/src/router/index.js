@@ -44,6 +44,12 @@ const routes = [
         component: () => import(/* webpackChunkName: "main" */ '../views/landing/Practices.vue'),
       },
       {
+        path: 'contact-us',
+        name: 'contact',
+        meta: { title: 'Contact' },
+        component: () => import(/* webpackChunkName: "main" */ '../views/landing/Contact.vue'),
+      },
+      {
         path: 'about-us',
         name: 'about',
         meta: { title: 'About' },

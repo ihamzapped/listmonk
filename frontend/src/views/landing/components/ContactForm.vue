@@ -69,6 +69,7 @@ export default Vue.extend({
   label {
     display: block;
     margin-bottom: 6px;
+    font-weight: 500;
   }
 
   textarea {
@@ -84,11 +85,11 @@ export default Vue.extend({
     background-color: transparent;
     border: 1px solid currentColor;
     border-radius: 2px;
-    color: white;
+    color: currentColor;
   }
 
   ::placeholder {
-    color: white;
+    color: currentColor;
     opacity: 1; /* Firefox */
   }
 

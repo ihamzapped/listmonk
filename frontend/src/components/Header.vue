@@ -54,7 +54,7 @@ export default Vue.extend({
         { name: 'home', text: 'Home' },
         { name: 'practices', text: 'Practice Areas' },
         { name: 'about', text: 'About Us' },
-        { name: '', text: 'Contact Us' },
+        { name: 'contact', text: 'Contact Us' },
       ],
     };
   },
@@ -106,7 +106,6 @@ export default Vue.extend({
 
 .nav-container {
   width: 100%;
-  // position: absolute;
 }
 
 .landing-navbar {
@@ -148,11 +147,6 @@ export default Vue.extend({
   .navbar-link:not(.is-arrowless)::after {
     border-color: var(--accent) !important;
   }
-
-  // a:hover,
-  // a:focus-within {
-  //   background-color: unset !important;
-  // }
 
   a:hover {
     color: var(--accent) !important;

@@ -59,7 +59,8 @@ $margin-y: 10vw;
   padding-bottom: $margin-y;
 
   .content {
-    margin: 0 3vw;
+    padding: 0 3vw;
+    margin: 0 auto;
     margin-top: $margin-y;
 
     color: var(--text-light);
