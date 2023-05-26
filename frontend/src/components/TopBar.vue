@@ -64,7 +64,7 @@ export default Vue.extend({
   background-color: var(--bg-light);
   position: sticky;
   top: 0;
-  z-index: 10;
+  z-index: 99;
 
   a {
     color: rgb(255 255 255 / 79%) !important;
