@@ -5,53 +5,83 @@
       <div class="column is-6">
         <b-field label="Format">
           <div>
-            <b-radio v-model="form.radioFormat"
-              @input="onFormatChange" :disabled="disabled" name="format"
+            <b-radio
+              v-model="form.radioFormat"
+              @input="onFormatChange"
+              :disabled="disabled"
+              name="format"
               native-value="richtext"
-              data-cy="check-richtext">{{ $t('campaigns.richText') }}</b-radio>
+              data-cy="check-richtext"
+              >{{ $t('campaigns.richText') }}</b-radio
+            >
 
-            <b-radio v-model="form.radioFormat"
-              @input="onFormatChange" :disabled="disabled" name="format"
+            <b-radio
+              v-model="form.radioFormat"
+              @input="onFormatChange"
+              :disabled="disabled"
+              name="format"
               native-value="html"
-              data-cy="check-html">{{ $t('campaigns.rawHTML') }}</b-radio>
+              data-cy="check-html"
+              >{{ $t('campaigns.rawHTML') }}</b-radio
+            >
 
-            <b-radio v-model="form.radioFormat"
-              @input="onFormatChange" :disabled="disabled" name="format"
+            <b-radio
+              v-model="form.radioFormat"
+              @input="onFormatChange"
+              :disabled="disabled"
+              name="format"
               native-value="markdown"
-              data-cy="check-markdown">{{ $t('campaigns.markdown') }}</b-radio>
+              data-cy="check-markdown"
+              >{{ $t('campaigns.markdown') }}</b-radio
+            >
 
-            <b-radio v-model="form.radioFormat"
-              @input="onFormatChange" :disabled="disabled" name="format"
+            <b-radio
+              v-model="form.radioFormat"
+              @input="onFormatChange"
+              :disabled="disabled"
+              name="format"
               native-value="plain"
-              data-cy="check-plain">{{ $t('campaigns.plainText') }}</b-radio>
+              data-cy="check-plain"
+              >{{ $t('campaigns.plainText') }}</b-radio
+            >
           </div>
         </b-field>
       </div>
       <div class="column is-6 has-text-right">
-          <b-button @click="onTogglePreview" type="is-primary"
-            icon-left="file-find-outline" data-cy="btn-preview">
-            {{ $t('campaigns.preview') }}
-          </b-button>
+        <b-button
+          @click="onTogglePreview"
+          type="is-primary"
+          icon-left="file-find-outline"
+          data-cy="btn-preview"
+        >
+          {{ $t('campaigns.preview') }}
+        </b-button>
       </div>
     </div>
 
     <!-- wsywig //-->
     <template v-if="isRichtextReady && form.format === 'richtext'">
-      <tiny-mce
-        v-model="form.body"
-        :disabled="disabled"
-        :init="richtextConf"
-      />
+      <tiny-mce v-model="form.body" :disabled="disabled" :init="richtextConf" />
 
-      <b-modal scroll="keep" :width="1200"
-        :aria-modal="true" :active.sync="isRichtextSourceVisible">
+      <b-modal
+        scroll="keep"
+        :width="1200"
+        :aria-modal="true"
+        :active.sync="isRichtextSourceVisible"
+      >
         <div>
           <section expanded class="modal-card-body preview">
             <html-editor v-model="richTextSourceBody" />
           </section>
           <footer class="modal-card-foot has-text-right">
             <b-button @click="onFormatRichtextHTML">{{ $t('campaigns.formatHTML') }}</b-button>
-            <b-button @click="() => { this.isRichtextSourceVisible = false; }">
+            <b-button
+              @click="
+                () => {
+                  this.isRichtextSourceVisible = false;
+                }
+              "
+            >
               {{ $t('globals.buttons.close') }}
             </b-button>
             <b-button @click="onSaveRichTextSource" class="is-primary">
@@ -61,15 +91,20 @@
         </div>
       </b-modal>
 
-      <b-modal scroll="keep" :width="750"
-        :aria-modal="true" :active.sync="isInsertHTMLVisible">
+      <b-modal scroll="keep" :width="750" :aria-modal="true" :active.sync="isInsertHTMLVisible">
         <div>
           <section expanded class="modal-card-body preview">
             <html-editor v-model="insertHTMLSnippet" />
           </section>
           <footer class="modal-card-foot has-text-right">
             <b-button @click="onFormatRichtextHTML">{{ $t('campaigns.formatHTML') }}</b-button>
-            <b-button @click="() => { this.isInsertHTMLVisible = false; }">
+            <b-button
+              @click="
+                () => {
+                  this.isInsertHTMLVisible = false;
+                }
+              "
+            >
               {{ $t('globals.buttons.close') }}
             </b-button>
             <b-button @click="onInsertHTML" class="is-primary">
@@ -84,19 +119,27 @@
     <html-editor v-if="form.format === 'html'" v-model="form.body" />
 
     <!-- plain text / markdown editor //-->
-    <b-input v-if="form.format === 'plain' || form.format === 'markdown'"
-      v-model="form.body" @input="onEditorChange"
-      type="textarea" name="content" ref="plainEditor" class="plain-editor" />
+    <b-input
+      v-if="form.format === 'plain' || form.format === 'markdown'"
+      v-model="form.body"
+      @input="onEditorChange"
+      type="textarea"
+      name="content"
+      ref="plainEditor"
+      class="plain-editor"
+    />
 
     <!-- campaign preview //-->
-    <campaign-preview v-if="isPreviewing"
+    <campaign-preview
+      v-if="isPreviewing"
       @close="onTogglePreview"
       type="campaign"
       :id="id"
       :title="title"
       :contentType="form.format"
       :templateId="templateId"
-      :body="form.body"></campaign-preview>
+      :body="form.body"
+    ></campaign-preview>
 
     <!-- image picker -->
     <b-modal scroll="keep" :aria-modal="true" :active.sync="isMediaVisible" :width="900">
@@ -143,7 +186,7 @@ import 'tinymce/skins/ui/oxide/skin.css';
 import 'tinymce/themes/silver';
 
 import { colors, uris } from '@/constants';
-import Media from '../views/listMonk/Media.vue';
+import Media from '../views/list-monk/Media.vue';
 import CampaignPreview from './CampaignPreview.vue';
 import HTMLEditor from './HTMLEditor.vue';
 
@@ -219,7 +262,9 @@ export default {
       const { lang } = this.serverConfig;
 
       this.richtextConf = {
-        init_instance_callback: () => { this.isReady = true; },
+        init_instance_callback: () => {
+          this.isReady = true;
+        },
         urlconverter_callback: this.onEditorURLConvert,
 
         setup: (editor) => {
@@ -248,9 +293,24 @@ export default {
         entity_encoding: 'raw',
         convert_urls: true,
         plugins: [
-          'anchor', 'autoresize', 'autolink', 'charmap', 'emoticons', 'fullscreen',
-          'help', 'hr', 'image', 'imagetools', 'link', 'lists', 'paste', 'searchreplace',
-          'table', 'visualblocks', 'visualchars', 'wordcount',
+          'anchor',
+          'autoresize',
+          'autolink',
+          'charmap',
+          'emoticons',
+          'fullscreen',
+          'help',
+          'hr',
+          'image',
+          'imagetools',
+          'link',
+          'lists',
+          'paste',
+          'searchreplace',
+          'table',
+          'visualblocks',
+          'visualchars',
+          'wordcount',
         ],
         toolbar: `undo redo | formatselect styleselect fontsizeselect |
                   bold italic underline strikethrough forecolor backcolor subscript superscript |
@@ -297,7 +357,7 @@ export default {
         () => {
           // On cancel, undo the radio selection.
           this.form.radioFormat = this.form.format;
-        },
+        }
       );
     },
 
@@ -411,7 +471,7 @@ export default {
 
     beautifyHTML(str) {
       // Pad all tags with linebreaks.
-      let s = this.trimLines(str.replace(/(<(?!(\/)?a|span)([^>]+)>)/ig, '\n$1\n'), true);
+      let s = this.trimLines(str.replace(/(<(?!(\/)?a|span)([^>]+)>)/gi, '\n$1\n'), true);
 
       // Remove extra linebreaks.
       s = s.replace(/\n+/g, '\n');
@@ -483,24 +543,29 @@ export default {
         });
       } else if ((from === 'richtext' || from === 'html') && to === 'markdown') {
         // richtext, html => markdown
-        this.form.body = turndown.turndown(this.form.body).replace(/\n\n+/ig, '\n\n');
+        this.form.body = turndown.turndown(this.form.body).replace(/\n\n+/gi, '\n\n');
       } else if (from === 'plain' && (to === 'richtext' || to === 'html')) {
         // plain => richtext, html
-        this.form.body = this.form.body.replace(/\n/ig, '<br>\n');
+        this.form.body = this.form.body.replace(/\n/gi, '<br>\n');
       } else if (from === 'richtext' && to === 'html') {
         // richtext => html
         this.form.body = this.beautifyHTML(this.form.body);
       } else if (from === 'markdown' && (to === 'richtext' || to === 'html')) {
         // markdown => richtext, html.
-        this.$api.convertCampaignContent({
-          id: 1, body: this.form.body, from, to,
-        }).then((data) => {
-          this.form.body = this.beautifyHTML(data.trim());
-          // Update the HTML editor.
-          if (to === 'html') {
-            this.updateHTMLEditor();
-          }
-        });
+        this.$api
+          .convertCampaignContent({
+            id: 1,
+            body: this.form.body,
+            from,
+            to,
+          })
+          .then((data) => {
+            this.form.body = this.beautifyHTML(data.trim());
+            // Update the HTML editor.
+            if (to === 'html') {
+              this.updateHTMLEditor();
+            }
+          });
       }
 
       this.onEditorChange();

@@ -1,5 +1,5 @@
 <template>
-  <section class="login-container px-4">
+  <section class="container is-fullhd login-container px-4">
     <form @submit.prevent="login" class="mx-auto box">
       <b-field label="E-mail" type="email" :message="{ 'Invalid Credentials': hasError }">
         <b-input v-model="mail" required type="email"></b-input>
@@ -63,8 +63,7 @@ export default Vue.extend({
 .login-container {
   height: 100%;
   width: 100%;
-  display: flex;
-  align-items: center;
+  margin-top: 20%;
 
   form {
     width: 100%;
